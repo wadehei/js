@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        // var arr = [1, 3, 4, 2, 5, 6, 4, 7];
+        // function noPassValue() {
+        //     return arr.reduce(function (prev, next) {
+        //         console.log("prev:", prev);
+        //         console.log("next:", next);
+
+        //         return prev + " " + next;
+        //     });
+        // }
+        // function passValue() {
+        //     return arr.reduce(function (prev, next) {
+        //         console.log("prev:", prev);
+        //         console.log("next:", next);
+
+        //         prev[next] = 1;
+        //         return prev;
+        //     }, {});
+        // }
+
+        // console.log("No Additional parameter:", noPassValue());
+        // console.log("----------------");
+        // console.log("With {} as an additional parameter:", passValue());
+        // var re = [1, 2, 3, 4];
+        // console.log(re.indexOf(2));
+        // re.findIndex(function (v, i, arr) {
+        //     if (v = 2) {
+        //         // console.log(i);
+        //         return i;
+        //     }
+        //     console.log(i);
+        // })
+        // re.find(function (v, i, arr) {
+        //     console.log(i); //[1,2,3,4]
+        //     console.log(this); //{this: 'this'}
+        //     return v >= 2;
+        // }, { this: 'this' })
+        // console.log(re); //2
+        // var re2 = [1, 2, 3, 4].find(function (v, i, arr) {
+        //     console.log(this); //{0: "_", 1: "t", 2: "h", 3: "i", 4: "s", length: 5}
+        //     return v >= 10;
+        // }, '_this')
+        // console.log(re2); //undefined
+
+
+
+        Array.prototype.unique = function () {
+            var arr = [this[0]];
+            for (var i = 1; i < this.length; i++) { //遍历当前数组,从第二项开始遍历
+                if (this.indexOf(this[i]) === i) {//如果当前数组的第i项是i那么就存入新的数组
+                    arr.push(this[i])
+                }
+            }
+            return arr;
+        }
+
+
+        
+        // Array.prototype.unique = function () {
+        //     var arr = [];
+        //     this.sort()
+        //     for (var i = 0; i < this.length; i++) {
+        //         if (this[i] !== arr[arr.length - 1]) {
+        //             arr.push(this[i])
+        //         }
+        //     }
+        //     return arr;
+        // }
+        var re = [1, 1, 2, 3, 4, 1, 2, 2, 3, 5, 4, 6, 7];
+        console.log(re.unique());
+        // var res = [...new Set(re)];
+        // console.log(res);
+    </script>
+</body>
+
+</html>

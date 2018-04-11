@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        // class Animal {
+        //     constructor() {
+        //         this.type = 'animal'
+        //         console.log(this.type)
+        //     }
+        //     says(say) {
+        //         var _this=this
+        //         setTimeout( function() {
+        //             console.log(_this)
+        //             console.log(_this.type + 'says' + say)
+        //         }, 1000)
+        //     }
+        // }
+        // var animal = new Animal()
+        // animal.says('hh');
+        // var a = []
+        // for (var i = 0; i < 5; i++) {
+        //     a[i] = (function (i) {
+        //         return function () {
+        //             console.log(i)
+        //         }
+        //     })(i)
+        // }
+        // a[2]()
+        // class Animal {
+        //     constructor() {
+        //         this.type = 'animal'
+        //     }
+        //     says(say) {
+        //         console.log(this.type + 'says' + say)
+        //     }
+        // }
+        // let animal = new Animal()
+        // animal.says('hello') // animal says hello
+
+        // class Cat extends Animal {
+        //     constructor() {
+        //         super()
+        //         this.type = 'cat'
+        //     }
+        // }
+        // let cat = new Cat()
+        // cat.says('hello') // cat says hello
+        var a=1,b=2,c=3;
+        function add(...a) {
+            let sum = 0
+            for (var val of a) {
+                sum += val;
+            console.log(sum);
+            }
+            return sum;
+        }
+        add(a,b,c);
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        function func(n) {
+            if (n == 0 || n == 1) {
+                return 1;
+            }
+            return arguments.callee(n - 1) + arguments.callee(n - 2);
+        }
+
+        var a = func(5);
+        console.log(a);
+        function sum(n) {
+            if (n == 1) {
+                return 1;
+            }
+            return arguments.callee(n - 1) + n;
+        }
+        console.log(sum(5));
+        function strrepeat(str, num) {
+            return new Array(num + 1).join(str);
+        }
+        console.log(strrepeat("hello", 3));
+    </script>
+</body>
+
+</html>

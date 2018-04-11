@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        // var arr = [1, 23, 1, 1, 1, 3, 23, 5, 6, 7, 9, 9, 8, 5];
+        // var r = arr.filter(function (element, index, self) {
+        //     return self.indexOf(element) === index;
+        // });
+        // console.log(r);
+        /**
+    取出字符串中重复字数最多的字符
+*/
+        var words = 'aaab';   　　　　　//创建字符串
+        var word,   　　　　　　　　　　　　　　　　　　　　　　　　　//单个字符
+            length; 　　　　　　　　　　　　　　　　　　　　　　　　　//该字符的长度
+        //定义输出对象
+        var max = {
+            wordName: '',  　　　　　　　　　　　　　　　　　　　　　//重复次数最多的字符
+            wordLength: 0  　　　　　　　　　　　　　　　　　　　　　//重复的次数
+        };
+        //递归方法,传入字符串
+        (function (words) {
+            if (!words) return;                 //如果字符串已经变空则返回,结束递归
+            word = words[0];                 //取出字符串中的第一个字符
+            length = words.length;                 //将length设为当前字符串长度
+            words = words.replace(new RegExp(word, 'g'), ''); //返回将字符串剔除当前字符的剩余字符串
+            length = length - words.length;            //重设length为当前字符在字符串中的长度
+            if (length > max.wordLength)             //如果该字符重复次数大于maxLength,则重设maxLength为当前字符重复次数
+                max = {                              //重设对象的值
+                    wordName: word,
+                    wordLength: length
+                };
+            arguments.callee(words);                //递归调用,传入剩余字符串
+        })(words);
+        console.log(max.wordName + "\n" + max.wordLength);          //递归结束后输出结果
+    </script>
+</body>
+
+</html>
